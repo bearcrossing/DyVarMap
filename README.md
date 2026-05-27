@@ -35,3 +35,64 @@ cd DyVarMap
 # Create and activate the conda environment
 conda env create -f environment.yml
 conda activate dyvarmap
+```
+
+---
+
+## 📂 Repository Structure
+
+```text
+DyVarMap/
+├── assets/                 # Images and figures for documentation
+├── data/                   # Example datasets
+│   ├── raw_pdbs/           # Sample structures (WT and A628T)
+│   └── features/           # Extracted geometric feature matrices
+├── dyvarmap/               # Core Python modules
+│   ├── stage1_ensemble.py  # AF2 orchestration
+│   ├── stage2_refine.py    # OpenMM minimization pipeline
+│   ├── stage3_features.py  # Structural feature extraction 
+│   └── stage4_ml.py        # SPIB, HDBSCAN, and SHAP classification
+├── notebooks/              # Jupyter notebooks for interactive analysis
+│   └── 01_pipeline_walkthrough.ipynb
+├── scripts/                # Bash scripts for HPC workload scheduling (SLURM/PBS)
+├── environment.yml         # Conda environment configuration
+└── README.md
+```
+
+---
+
+## 📊 Result Highlights
+
+### 1. Distinct Free Energy Landscapes
+By employing State Predictive Information Bottleneck (SPIB), DyVarMap successfully projects complex, high-dimensional conformational dynamics into a 2D interpretable space, revealing stark differences in metastable states between WT and pathogenic variants.
+
+![Free Energy Landscapes](assets/figure6_landscapes.png)
+
+### 2. Mechanistic Interpretability via SHAP
+Unlike traditional sequence-based models, DyVarMap utilizes SHAP (SHapley Additive exPlanations) to quantify exactly *which* biophysical features drive the pathogenicity prediction (e.g., the disruption of the crucial E565-K659 salt bridge).
+
+![SHAP Interpretability](assets/figure9_shap.png)
+
+---
+
+## 📝 Citation
+
+If you use DyVarMap or find this repository helpful in your research, please cite our paper:
+
+```bibtex
+@article{lian2026dyvarmap,
+  title={DyVarMap: Integrating Conformational Dynamics and Interpretable Machine Learning for Cancer-Associated Missense Variant Classification in FGFR2},
+  author={Lian, Yiyang and Shehu, Amarda},
+  journal={Bioengineering},
+  volume={13},
+  number={x},
+  pages={126},
+  year={2026},
+  publisher={MDPI},
+  doi={10.3390/bioengineering1300126}
+}
+```
+
+## 📬 Contact
+**Yiyang Lian** - [yiyang.lian7@gmail.com](mailto:yiyang.lian7@gmail.com)  
+Ph.D., Bioinformatics and Computational Biology, George Mason University
