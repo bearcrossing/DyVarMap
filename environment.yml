@@ -1,0 +1,23 @@
+name: dyvarmap
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - mdtraj          # For fast trajectory reading and geometric feature extraction
+  - mdanalysis      # For advanced structural analysis
+  - openmm          # For physics-based energy minimization
+  - pdbfixer        # Helper for OpenMM
+  - hdbscan         # For density-based clustering of conformational states
+  - pip:
+    - shap          # For explainable AI (Feature attribution)
+    - spib          # State Predictive Information Bottleneck (Manifold learning)
+    - xgboost       # Often paired with SHAP, optional but recommended
